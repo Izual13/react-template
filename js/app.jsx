@@ -7,7 +7,7 @@ var data = [
 var Quote = React.createClass({
     render: function () {
         return (
-            <div className="comment panel panel-default">
+            <div className="panel panel-default">
                 <div className="panel-heading">
                     {this.props.author}
                 </div>
