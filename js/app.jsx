@@ -4,7 +4,7 @@ var data = [
     {author: "John Woods", text: "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."}
 ];
 
-var Comment = React.createClass({
+var Quote = React.createClass({
     render: function () {
         return (
             <div className="comment panel panel-default">
@@ -19,35 +19,35 @@ var Comment = React.createClass({
     }
 });
 
-var CommentList = React.createClass({
+var QuoteList = React.createClass({
     render: function () {
-        var commentNodes = this.props.data.map(function (comment) {
+        var quote = this.props.data.map(function (quote) {
             return (
-                <Comment author={comment.author}>
-                    {comment.text}
-                </Comment>
+                <Quote author={quote.author}>
+                    {quote.text}
+                </Quote>
             );
         });
         return (
-            <div className="commentList">
-                {commentNodes}
+            <div className="quoteList">
+                {quote}
             </div>
         );
     }
 });
 
-var CommentBox = React.createClass({
+var QuotesBox = React.createClass({
     render: function () {
         return (
-            <div className="commentBox">
+            <div>
                 <h1>Quotes</h1>
-                <CommentList data={this.props.data}/>
+                <QuoteList data={this.props.data}/>
             </div>
         );
     }
 });
 
 React.render(
-    <CommentBox data={data}/>,
+    <QuotesBox data={data}/>,
     document.getElementById('content')
 );
